@@ -2,6 +2,7 @@
 # Learn more at\n5.7.8  https://support.google.com/mail/?p=BadCredentials z15sm4180300vsz.27 - gsmtp')
 # Means Sign-in attempt was blocked by Google
 
+from getpass import getpass
 import smtplib
 from email.mime.text import MIMEText##
 from email.mime.multipart import MIMEMultipart##
@@ -27,6 +28,6 @@ def sendEmail(from_email, password, to_email, subject, message):
     except Exception as e:
         print('Something went wrong : ' + str(e))
         return False
-address = input("Please enter the email password:   ")
+address = getpass("Please enter the email password:   ")
 print("Sending email...")
 sendEmail("rachel.lewis9312@gmail.com", address, "rachel.lewis9312@gmail.com","Test", "Hi there, sending this email from Python!")
