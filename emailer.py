@@ -8,6 +8,7 @@ from email.mime.multipart import MIMEMultipart##
 from email.mime.base import MIMEBase
 from email import encoders
 
+
 def sendEmail(from_email, password, to_email, subject, message):
     msg=MIMEMultipart()
     msg['From']= from_email
@@ -26,5 +27,6 @@ def sendEmail(from_email, password, to_email, subject, message):
     except Exception as e:
         print('Something went wrong : ' + str(e))
         return False
-
-sendEmail("rachel.lewis9312@gmail.com", "sugarfoot59!", "rachel.lewis9312@gmail.com","Test", "Hi there, sending this email from Python!")
+address = input("Please enter the email password:   ")
+print("Sending email...")
+sendEmail("rachel.lewis9312@gmail.com", address, "rachel.lewis9312@gmail.com","Test", "Hi there, sending this email from Python!")
