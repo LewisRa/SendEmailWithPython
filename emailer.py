@@ -8,15 +8,28 @@ from email.mime.text import MIMEText##
 from email.mime.multipart import MIMEMultipart##
 from email.mime.base import MIMEBase
 from email import encoders
+import os
+from datetime import date 
 
 
-def sendEmail(from_email, password, to_email, subject, message):
+def sendEmail(from_email, password, to_email, subject, message, files=[]):
+    
+    today = date.today()
+    
     msg=MIMEMultipart()
     msg['From']= from_email
     msg['To']= to_email
-    msg['Subject']= subject
-
+    msg['Subject']= subject + "_" + str(today)
     msg.attach(MIMEText(message, "plain"))
+
+    for file in files:
+        part = MIMEBase('application', "octet-stream")
+        part.set_payload( open(file,"rb").read() )
+        encoders.encode_base64(part)
+        part.add_header('Content-Disposition', 'attachment; filename="%s"'
+                       % os.path.basename(file))
+        msg.attach(part)
+    text = msg.as_string()
     try:  
         #server = smtplib.SMTP('smtp.gmail.com', 587) tells smtp what server to use to send email
         server=smtplib.SMTP_SSL('smtp.gmail.com', 465)
@@ -31,4 +44,6 @@ def sendEmail(from_email, password, to_email, subject, message):
         return False
 address = getpass("Please enter the email password:   ")
 print("Sending email...")
+#sendEmail("rachel.lewis9312@gmail.com", address, "rachel.lewis9312@gmail.com","Test", "Hi there, sending this email from Python!", ["Emailmessage.PNG"])
+
 sendEmail("rachel.lewis9312@gmail.com", address, "rachel.lewis9312@gmail.com","Test", "Hi there, sending this email from Python!")
