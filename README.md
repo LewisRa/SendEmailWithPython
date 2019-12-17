@@ -23,3 +23,7 @@ https://www.youtube.com/watch?v=3UjJNz_gfFE'
 Web Programming with Flask-froshim2
 https://www.youtube.com/watch?v=zdgYw-3tzfI&list=PLWKjhJtqVAbmGw5fN5BQlwuug-8bDmabi&index=8
 
+https://temp-mail.org/en/  Temp Mail provides temporary, secure, anonymous, free, disposable email address.
+
+Send Personalized Emails with Python | Free Email Service with Python
+https://www.youtube.com/watch?v=zbTKDDrQ16k&list=WL&index=80
