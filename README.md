@@ -27,3 +27,5 @@ https://temp-mail.org/en/  Temp Mail provides temporary, secure, anonymous, free
 
 Send Personalized Emails with Python | Free Email Service with Python
 https://www.youtube.com/watch?v=zbTKDDrQ16k&list=WL&index=80
+
+**ADD gitignore file using Github Desktop so private information will not get leaked!**
