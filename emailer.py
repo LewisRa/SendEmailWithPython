@@ -34,7 +34,7 @@ def sendEmail(from_email, password, to_email, subject, message, files=[]):
         #server = smtplib.SMTP('smtp.gmail.com', 587) tells smtp what server to use to send email
         server=smtplib.SMTP_SSL('smtp.gmail.com', 465)
         server.ehlo() #Extended Simple Mail Transfer Protocol
-        #server.starttls() #Starttls turn on encryption, so the email is encrypted between you and Gmail.
+        server.starttls() #Starttls turn on encryption, so the email is encrypted between you and Gmail.
         server.login(from_email, password)
         server.sendmail(from_email,to_email,msg.as_string())
         server.close()
