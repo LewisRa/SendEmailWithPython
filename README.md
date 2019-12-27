@@ -28,4 +28,7 @@ https://temp-mail.org/en/  Temp Mail provides temporary, secure, anonymous, free
 Send Personalized Emails with Python | Free Email Service with Python
 https://www.youtube.com/watch?v=zbTKDDrQ16k&list=WL&index=80
 
+Python and Excel using win32com - Hello World
+https://www.youtube.com/watch?v=3FxcEJUzbEc
+
 **ADD gitignore file using Github Desktop so private information will not get leaked!**
